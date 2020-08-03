@@ -1,5 +1,5 @@
 #!/bin/sh
-cd f:/Coding/Projects/Glassdoor
+cd C:/Users/hannez/chat
 git checkout dev
 git add .
 git commit -am "made changes"

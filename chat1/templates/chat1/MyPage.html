@@ -188,8 +188,8 @@ var validate_submit = setInterval(function() {
 $("#btnname").click(function(){
 if ($(".names").css('display') !== 'none' && validator == 1) {
   subject_name = $("#firstname").val() + " " + $("#lastname").val()
-  $(".names").hide();
-  $("#progessbar").show();
+  $(".names").hide(); //hide first last name input window
+  $("#progessbar").show(); //alert with message that chat is loaded
   $(".progress-bar").animate({
     width: "100%"
   }, 3000);
@@ -213,7 +213,7 @@ if ($(".names").css('display') !== 'none' && validator == 1) {
     }());
   }, 8000);
 
-  setTimeout("Redirect()", 20000);
+  setTimeout("Redirect()", 35000); //execute 20secs after submit button was clicked
 
 }});
 
