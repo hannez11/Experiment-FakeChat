@@ -213,7 +213,7 @@ if ($(".names").css('display') !== 'none' && validator == 1) {
     }());
   }, 8000);
 
-  setTimeout("Redirect()", 35000); //execute 20secs after submit button was clicked
+  setTimeout("Redirect()", 40000); //execute 20secs after submit button was clicked
 
 }});
 
@@ -245,7 +245,7 @@ $(document).on('keypress',function(e) {
     }());
   }, 8000);
 
-  setTimeout("Redirect()", 35000);
+  setTimeout("Redirect()", 40000);
 }});
 
 
@@ -435,11 +435,9 @@ function randomJoin() {
 function randomLeave() {
     let random_numberleave1 = Math.floor(Math.random() * (names_joined.length - 2)); //minus two so that two most recent joiners cant leave immediately
     let random_numberleave2 = Math.floor(Math.random() * (names_joined.length - 2)); //minus two so that two most recent joiners cant leave immediately
-    console.log(random_numberleave1,random_numberleave2)
     if (random_numberleave1 == random_numberleave2) {
       random_numberleave2 ++; // increase by one if numberleave1 and 2 are the same
     }
-    console.log(random_numberleave1,random_numberleave2)
     name_left1 = names_joined[random_numberleave1];
     name_left2 = names_joined[random_numberleave2];
     names_joined.splice(random_numberleave1, 1); //remove name from array
