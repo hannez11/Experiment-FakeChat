@@ -211,7 +211,7 @@ if ($(".names").css('display') !== 'none' && validator == 1) {
           loop();  
       }, rand);
     }());
-  }, 8000);
+  }, 6500);
 
   setTimeout("Redirect()", 40000); //execute 20secs after submit button was clicked
 
@@ -243,7 +243,7 @@ $(document).on('keypress',function(e) {
           loop();  
       }, rand);
     }());
-  }, 8000);
+  }, 6500);
 
   setTimeout("Redirect()", 40000);
 }});
@@ -434,10 +434,15 @@ function randomJoin() {
 //randomly selected name of leaving participant
 function randomLeave() {
     let random_numberleave1 = Math.floor(Math.random() * (names_joined.length - 2)); //minus two so that two most recent joiners cant leave immediately
-    let random_numberleave2 = Math.floor(Math.random() * (names_joined.length - 2)); //minus two so that two most recent joiners cant leave immediately
-    if (random_numberleave1 == random_numberleave2) {
-      random_numberleave2 ++; // increase by one if numberleave1 and 2 are the same
+    let random_numberleave2 = Math.floor(Math.random() * (names_joined.length - 2)); 
+    
+    // if (random_numberleave1 == random_numberleave2) {
+    //   random_numberleave2 = Math.max(0,(random_numberleave2 - 1)) // decrease by one if numberleave1 and 2 are the same. use index==2 if random_number == 0
+    // }
+    while (random_numberleave1 == random_numberleave2) { // if both drafts are the same, draft second number again. otherwise one person will leave twice
+      random_numberleave2 = Math.floor(Math.random() * (names_joined.length - 2)); 
     }
+
     name_left1 = names_joined[random_numberleave1];
     name_left2 = names_joined[random_numberleave2];
     names_joined.splice(random_numberleave1, 1); //remove name from array
