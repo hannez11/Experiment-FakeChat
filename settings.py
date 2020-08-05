@@ -13,7 +13,7 @@ SESSION_CONFIGS = [
     dict(
        name='chat1',
        display_name="Chat",
-       num_demo_participants=2,
+       num_demo_participants=500,
        app_sequence=['chat1']
     ),
 ]
