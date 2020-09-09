@@ -93,62 +93,55 @@
 </div>
 
 <div id="progessbar" style="display: none;">
+  <div class="alert alert-primary" role="alert" style="text-align: center;">
+      Please wait a moment until the chatroom is loaded.
+  </div>
 
-<div class="alert alert-primary" role="alert" style="text-align: center;">
-    Please wait a moment until the chatroom is loaded.
-</div>
-
-<div class="col-xs-12 col-sm-12 progress-container">
-    <div class="progress progress-striped active">
-        <div class="progress-bar progress-bar-success" style="width:0%"></div>
-    </div>
-</div>
-
+  <div class="col-xs-12 col-sm-12 progress-container">
+      <div class="progress progress-striped active">
+          <div class="progress-bar progress-bar-success" style="width:0%"></div>
+      </div>
+  </div>
 </div>
 
 <div class="container" style="display:none">
-<div class="row">
+  <div class="row">
 
-  <div class="col-md-9">
-    <div class="chatcontainer">
+    <div class="col-md-9">
+      <div class="chatcontainer">
 
-      <div class="messages">
-        <div class="message" style="text-align: center;">Do not communicate with other participants unless you are instructed to do so.<br>You will be shortly redirected to the study.</div>
-      </div>
-  
-      <div class="input">
-        <input type="text" placeholder="Type message here!"/>
-        <div class="btn" id="btnsend">Send</div>
-      </div>
-  
-  </div>
-</div>
-
-  <div class="col-md-3" style="margin: 20px auto">
-    <div class="card">
-      <div class="card-header" style="text-align: center;">
-        Userlist
-      </div>
-      <div class="card-body" style="height: 520px; overflow-y: scroll;">
-        <p class="waiting_number" style="font-weight: bold;">Number</p>
-        <p class="card-text waiting_names"></p>
-      </div>
+        <div class="messages">
+          <div class="message" style="text-align: center;">Do not communicate with other participants unless you are instructed to do so.<br>You will be shortly redirected to the study.</div>
+        </div>
+    
+        <div class="input">
+          <input type="text" placeholder="Type message here!"/>
+          <div class="btn" id="btnsend">Send</div>
+        </div>
+    
     </div>
   </div>
 
+    <div class="col-md-3" style="margin: 20px auto">
+      <div class="card">
+        <div class="card-header" style="text-align: center;">
+          Userlist
+        </div>
+        <div class="card-body" style="height: 520px; overflow-y: scroll;">
+          <p class="waiting_number" style="font-weight: bold;">Number</p>
+          <p class="card-text waiting_names"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
-</div>
-
-
-
 
 <!-- <div style="text-align: right">
   <button id="nextbutton" class="btn btn-primary">Continue</button>
 </div> -->
 
-
 <script>
-
 
 // Selectors
 var messages = document.querySelector('.messages') //chatbox
@@ -174,10 +167,10 @@ setTimeout(function() {
   }, 7000);            
 }
 
-// check whether first and lastname were entered (3 chars atleast)
+// check whether first and lastname were entered (2 chars atleast)
 var validate_submit = setInterval(function() {
 // console.log($("#firstname").val().length);
-if ($("#firstname").val().length > 2 && $("#lastname").val().length > 2) {
+if ($("#firstname").val().length >= 2 && $("#lastname").val().length >= 2) {
   $('#btnname').removeAttr('data-original-title'); // removes tooltip
   validator = 1
   clearInterval(validate_submit);
@@ -254,128 +247,7 @@ function(event){
 });
 
 // only english names?
-let names = [
-"Yong Newton",
-"Judith Cooke",
-"Terrance Rich",
-"Darron Hernandez",
-"Vance Kirby",
-"Maribel Gonzales",
-"Bryon Howe",
-"Lenard Lewis",
-"Jayne Schroeder",
-"Coy Ortega",
-"Theodore Pitts",
-"Nicole Vargas",
-"Brady Donovan",
-"Kirby Downs",
-"Chong Davil",
-"Lisa Wade",
-"Francesco Collier",
-"Virgilio Duarte",
-"Eloy Morton",
-"Leigh Powell",
-'Lionel Boyd',
-'Beatrice Brooks',
-'Julian Alvarez',
-'Clarence Johnson',
-'Jasmine Clarke',
-'Alfredo Park',
-'Pat Bishop',
-'Vicki Kelley',
-'Ora Fowler',
-'Benny Nash',
-'Terrence Strickland',
-'Christy Olson',
-'Jonathan Wilson',
-'Colin Parks',
-'Courtney Stanley',
-'Marty Chapman',
-'Emmett Warren',
-'Alicia James',
-'Cassandra Joseph',
-'Cheryl Allison',
-'Patty Brown',
-'Timothy Norris',
-'Cedric Jenkins',
-'Freddie Jackson',
-'Sophia Lawson',
-'Candace Graves',
-'Eric Pope',
-'Norman Santos',
-'Arnold Hayes',
-'Cristina Parsons',
-'Wilbur Young',
-'Janet Reeves',
-'Marcos Powers',
-'Irving Harris',
-'Elsie Brewer',
-'Naomi Salazar',
-'Alice Evans',
-'Tammy Roy',
-'Kay Gordon',
-'Marianne Jacobs',
-'Martin Soto',
-'Ian Morton',
-'Dominic Sims',
-'Marion Tucker',
-'Guadalupe Munoz',
-'Frankie Lawrence',
-'Suzanne Rodgers',
-'Silvia Willis',
-'Emily Hart',
-'Gladys Baldwin',
-'Barbara Lane',
-'Max Warner',
-'Otis Mendez',
-'Tanya Bryant',
-'Oliver Woods',
-'Sean Schmidt',
-'Roxanne Buchanan',
-'Jerome Bowman',
-'Elizabeth Cain',
-'Cameron Ryan',
-'Eugene Summers',
-'Opal Hamilton',
-'Danny Owens',
-'Kim Ruiz',
-'Elaine Davis',
-'Joshua Saunders',
-'Joan King',
-'Vivian Sherman',
-'Jessica Stokes',
-'Sherry Harper',
-'Jaime Owen',
-'Jenny Blake',
-'Van Williams',
-'Isabel Perkins',
-'Dana Beck',
-'Earl Holloway',
-'Taylor Kelly',
-'Edith Wagner',
-'Mercedes Rose',
-'Stella Barrett',
-'Anita Walker',
-'Margie Dennis',
-'Vicky Simpson',
-'Anthony Moran',
-'Ervin Becker',
-'Laurence Houston',
-'Brenda Gonzalez',
-'Margaret Shaw',
-'Gretchen Webb',
-'Justin Briggs',
-'Erma Padilla',
-'Sherri Walton',
-'Viola Carr',
-'Felix Ramirez',
-'Johanna Moody',
-'Ada Vaughn',
-'Tyrone Burgess',
-'Marco Barnett',
-'Mamie May',
-'Robin Mitchell',
-];
+let names = ['Y. Newton', 'Judith Cooke', 'Terrance Rich', 'Darron Hernandez', 'Vance Kirby', 'M. Gonzales', 'Maribel G.', 'Lenard Lewis', 'Jayne Schroeder', 'Coy Ortega', 'T. Pitts', 'Nicole Vargas', 'Theodore P.', 'Kirby Downs', 'Chong Davil', 'L. Wade', 'Francesco Collier', 'Virgilio Duarte', 'Lisa W.', 'Leigh Powell', 'L. Boyd', 'Beatrice Brooks', 'Julian Alvarez', 'Clarence Johnson', 'Lionel B.', 'A. Park', 'Pat Bishop', 'Vicki Kelley', 'Ora Fowler', 'Benny Nash', 'T. Strickland', 'Christy Olson', 'Jonathan Wilson', 'Colin Parks', 'Courtney Stanley', 'M. Chapman', 'Marty C.', 'Alicia James', 'Cassandra Joseph', 'Cheryl Allison', 'P. Brown', 'Timothy Norris', 'Patty B.', 'Freddie Jackson', 'Sophia Lawson', 'C. Graves', 'Eric Pope', 'Norman Santos', 'Candace G.', 'Cristina Parsons', 'W. Young', 'Janet Reeves', 'Marcos Powers', 'Irving Harris', 'Wilbur Y.', 'N. Salazar', 'Alice Evans', 'Tammy Roy', 'Kay Gordon', 'Marianne Jacobs', 'M. Soto', 'Ian Morton', 'Dominic Sims', 'Marion Tucker', 'Guadalupe Munoz', 'F. Lawrence', 'Frankie L.', 'Silvia Willis', 'Emily Hart', 'Gladys Baldwin', 'B. Lane', 'Max Warner', 'Barbara L.', 'Tanya Bryant', 'Oliver Woods', 'S. Schmidt', 'Roxanne Buchanan', 'Jerome Bowman', 'Sean S.', 'Cameron Ryan', 'E. Summers', 'Opal Hamilton', 'Danny Owens', 'Kim Ruiz', 'Eugene S.', 'J. Saunders', 'Joan King', 'Vivian Sherman', 'Jessica Stokes', 'Sherry Harper', 'J. Owen', 'Jenny Blake', 'Van Williams', 'Isabel Perkins', 'Dana Beck', 'E. Holloway', 'Earl H.', 'Edith Wagner', 'Mercedes Rose', 'Stella Barrett', 'A. Walker', 'Margie Dennis', 'Anita W.', 'Anthony Moran', 'Ervin Becker', 'L. Houston', 'Brenda Gonzalez', 'Margaret Shaw', 'Laurence H.', 'Justin Briggs', 'E. Padilla', 'Sherri Walton', 'Viola Carr', 'Felix Ramirez', 'Erma P.', 'A. Vaughn', 'Tyrone Burgess', 'Marco Barnett', 'Mamie May', 'Robin Mitchell'];
 
 let names_joined = []; //names of people that have joined
 let name_recentjoin;
