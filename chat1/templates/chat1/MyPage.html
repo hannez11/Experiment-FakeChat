@@ -420,7 +420,7 @@ function randomJoin() {
   // console.log("joined", name_recentjoin);
 };
 
-//randomly selected name of leaving participant
+//randomly selected name of leaving participants
 function randomLeave() {
   let random_numberleave1 = Math.floor(Math.random() * (names_joined.length - 8)); //minus two so that two most recent joiners cant leave immediately
   let random_numberleave2 = Math.floor(Math.random() * (names_joined.length - 8)); 
@@ -433,7 +433,6 @@ function randomLeave() {
   }
 
   name_left1 = names_joined[random_numberleave1];
-  console.log(name_left1)
   name_left2 = names_joined[random_numberleave2];
   // console.log("SHOULD BE " + names_joined[random_numberleave2])
   // 1 2 3 4* 5
@@ -448,8 +447,8 @@ function randomLeave() {
     names_joined.splice(random_numberleave2 - 1, 1); //remove name from array
   }
 
-  waitingnumber.textContent = "Amount: " + (names_joined.length+1)
-  var display_out = subject_name + "<br>" + names_joined.join("<br>")
+  waitingnumber.textContent = "Amount: " + (names_joined.length+1) //update user amount based on old names_joined minus the two leavers
+  var display_out = subject_name + "<br>" + names_joined.join("<br>") //old userlist minus the two leavers
   waitingnames.innerHTML = display_out;
 };
 
