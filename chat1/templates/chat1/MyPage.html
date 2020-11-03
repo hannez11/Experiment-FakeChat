@@ -163,10 +163,10 @@ message.innerHTML = "You will be redirected to the study in 5 seconds.."
 message.style.color = "Blue"
 messages.appendChild(message) //adds message to chatbox
 setTimeout(function() { //is automatically executed after 5sec
-  document.write("Redirecting to the study.."); //overwrites complete page
+  document.write('Redirecting to the study..<br>Please click here if you are not redirected within 5 seconds: <a href="https://unigiessen.fra1.qualtrics.com/jfe/form/SV_7UQSBUYAvM6CWBD">Link</a>'); //overwrites complete page
   }, 5000);    
 setTimeout(function() {
-  window.location = "https://unigiessen.fra1.qualtrics.com/jfe/form/SV_7UQSBUYAvM6CWBD";
+  window.location.replace("https://unigiessen.fra1.qualtrics.com/jfe/form/SV_7UQSBUYAvM6CWBD");
   }, 7000);            
 }
 
