@@ -78,21 +78,21 @@
 <div class="card bg-light m-3">
   <ul>
     <br>
-      <li>In order to join the chatroom, please enter your first and last name and press submit.</li><br>
+      <li>In order to join the chatroom, please enter a nickname and press submit.</li><br>
       <li>Once we have reached a sufficient number of participants, you will be redirected to the study.</li><br>
       <li>Please note that your names will be anonymized directly after the chat room (e.g., P12). Other participants will not see your real name and your performance during the main study cannot be linked back to you.</li>
     </ul>
 </div>
 
 <div class="form-group">
-  <label for="firstname">First name</label>
-  <input type="text" class="form-control" id="firstname" placeholder="Enter first name">
+  <label for="firstname">Nickname</label>
+  <input type="text" class="form-control" id="firstname" placeholder="Enter nickname">
 </div>
-<div class="form-group">
+<!-- <div class="form-group">
   <label for="lastname">Last name</label>
   <input type="text" class="form-control" id="lastname" placeholder="Enter last name">
-</div>
-<button type="button" class="btn btn-primary" id="btnname" data-toggle="tooltip" title="Please enter your real first and last name!">Submit</button>
+</div> -->
+<button type="button" class="btn btn-primary" id="btnname" data-toggle="tooltip" title="Please enter a nickname (with at least 3 characters)!">Submit</button>
 </div>
 
 <div id="progessbar" style="display: none;">
@@ -173,7 +173,7 @@ setTimeout(function() {
 // check whether first and lastname were entered (2 chars atleast)
 var validate_submit = setInterval(function() {
 // console.log($("#firstname").val().length);
-if ($("#firstname").val().length >= 2 && $("#lastname").val().length >= 2) {
+if ($("#firstname").val().length >= 3) {
   $('#btnname').removeAttr('data-original-title'); // removes tooltip
   validator = 1
   clearInterval(validate_submit);
@@ -183,7 +183,7 @@ if ($("#firstname").val().length >= 2 && $("#lastname").val().length >= 2) {
 //submit button is clicked
 $("#btnname").click(function(){
   if ($(".names").css('display') !== 'none' && validator == 1) {
-  subject_name = $("#firstname").val() + " " + $("#lastname").val()
+  subject_name = $("#firstname").val()
   $(".names").hide(); //hide first last name input window
   $("#progessbar").show(); //alert with message that chat is loaded
   $(".progress-bar").animate({
@@ -210,7 +210,7 @@ $("#btnname").click(function(){
 //submit button is executed by pressing enter
 $(document).on('keypress',function(e) {
 if(e.which == 13 && $(".names").css('display') !== 'none' && validator == 1) {
-subject_name = $("#firstname").val() + " " + $("#lastname").val()
+subject_name = $("#firstname").val()
 $(".names").hide();
 $("#progessbar").show();
 $(".progress-bar").animate({
