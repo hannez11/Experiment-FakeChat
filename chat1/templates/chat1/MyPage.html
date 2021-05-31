@@ -351,7 +351,7 @@ function writeLineAuto() {
   let random_join_leave = Math.round(Math.random()); //0 or 1
   // console.log(random_join_leave)
 
-  if ((random_join_leave == 1 && names_joined.length > 4 && force_join == 0) || (names_joined.length > 4 && names_joined.length < 17)) { //if leave is shuffled and there are at least 4 people in the chat and 2 people already joined
+  if ((random_join_leave == 1 && names_joined.length > 4 && force_join == 0) || (names_joined.length > 17)) { //if leave is shuffled and there are at least 4 people in the chat and 2 people already joined
       // console.log("randomLeave")
       randomLeave()
       let time = formatDate(new Date())
