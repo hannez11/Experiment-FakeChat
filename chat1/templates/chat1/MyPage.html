@@ -266,7 +266,7 @@ function populateChat() {
 // message.style.color = "Red"
 // messages.appendChild(message) //adds message to chatbox
 
-let random_startnumber = Math.round(Math.random() * (15 - 10)) + 10; //determine number of starting users. between 10-15 users will already be in chat
+let random_startnumber = Math.round(Math.random() * (13 - 7)) + 7; //determine number of starting users. between 7-13 users will already be in chat
 for (let i = 0; i < random_startnumber; i++) {
   let random_numberstart = Math.floor(Math.random() * names.length);
   name_recentjoin = names[random_numberstart];
@@ -351,7 +351,7 @@ function writeLineAuto() {
   let random_join_leave = Math.round(Math.random()); //0 or 1
   // console.log(random_join_leave)
 
-  if (random_join_leave == 1 && names_joined.length > 4 && force_join == 0) { //if leave is shuffled and there are at least 4 people in the chat and 2 people already joined
+  if ((random_join_leave == 1 && names_joined.length > 4 && force_join == 0) || (names_joined.length > 4 && names_joined.length < 17)) { //if leave is shuffled and there are at least 4 people in the chat and 2 people already joined
       // console.log("randomLeave")
       randomLeave()
       let time = formatDate(new Date())
