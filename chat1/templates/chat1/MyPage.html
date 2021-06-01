@@ -266,7 +266,7 @@ function populateChat() {
 // message.style.color = "Red"
 // messages.appendChild(message) //adds message to chatbox
 
-let random_startnumber = Math.round(Math.random() * (15 - 10)) + 10; //determine number of starting users. between 10-25 users will already be in chat
+let random_startnumber = Math.round(Math.random() * (25 - 15)) + 15; //determine number of starting users. between 10-25 users will already be in chat
 for (let i = 0; i < random_startnumber; i++) {
   let random_numberstart = Math.floor(Math.random() * names.length);
   name_recentjoin = names[random_numberstart];
