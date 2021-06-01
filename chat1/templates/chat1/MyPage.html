@@ -196,7 +196,7 @@ $("#btnname").click(function(){
     // execute writeLineAuto function every rand seconds
   setTimeout(function() { //execute with a 10 seconds delay
     var loops = (function loop() {
-      var rand = Math.round(Math.random() * (5000 - 1000)) + 1000;
+      var rand = Math.round(Math.random() * (5000 - 1000)) + 1000; //execute join/leave function each 1-5 secs
       setTimeout(function() {
           writeLineAuto();
           loop();  
@@ -251,9 +251,9 @@ function(event){
 // first experiment 
 // names = ['SmartBoy90', 'CookingJudy', 'Richard the Great 81', 'Hernandez59', 'Liberty_Man1776', 'Gonzalinho', 'Maree_GEE', 'BroBeans98', 'SweetJenny1', 'Corazon2005', 'Pittsburgh_Pete', 'Princess SARA', 'NewYORK_Teddy', 'CookeLover', 'Chang2004', 'StorngWoman111', 'Texas Cowboy', 'Mexico-Number1', 'Little Lisa', 'MaxPowers50', 'PompoSancho', 'GOAT_Lebron', 'ThatGuy', 'CJ_02', 'Sweetie_Pie', 'TheGreekster', 'KatyKate02', 'Sanja', 'Blue55', 'NashBash01', 'BabeCyntry', 'Small Lebowski', 'Wilson111', 'Stevy_G', 'BigMama', 'Sunny016', 'Big Mag', 'KPop80', 'Cassy_P1', 'Cherry01', 'BLM_J0rdan', 'Air_Mike', 'PettyBetty', 'Freddy02', 'GroovyGravy', 'Juan111', 'Johny99', 'Santiago12', 'LoveCandace', 'SleepyJoe', 'Rumpster01', 'JAMAL05', 'MemeQueen', 'Tumblereen', 'Captain Jack', 'Don Peppone ', 'Alicia21', 'Angry_Tammy', 'BronxBoy20', 'NamNumb', 'Irvy123', 'HolyLove', 'Cortez15', 'NewEngland Patriot', 'Guadalupe72', 'Lordim4', '!Jeronimo!', 'MAGA_4', 'MiamiVice21', 'CoolMama1', 'Samurai22', 'Hoolywood_Girl', 'Hermano87', 'CandyLover66', 'Bubbleboy 109', 'THE_SchmiTT', 'Boogieman55', 'Bowman22', 'Kobe4ever', 'RamenLover23', 'Freedomfighter20', 'Hamitlon1755', 'Downy22', 'Kim0001', 'Booby_B', 'Lil_Hula', 'Fresh_Prince', 'Miranda33', 'GamerGirl55', 'LILO02', 'Nik008', 'Blake19', 'BigFreak', 'NiceGuy55', 'New York Lover', 'TibbySparkles', 'MiMi06', 'Sweet_Tamara', 'Latina98', 'Chef1990', 'The B-MAN', 'Yennefer99', 'AtlantaGirl', 'JOJO20	', 'Cathy55', 'KittyCat20', 'Gonzalez11', 'Queen_B', 'Forty44', 'JJ033', 'AppleTim', 'Donny46', 'Pocahontas', 'Ramirez99', 'BabyBoy2019', 'Dori1234', 'ChicagoQueen', 'Luffy01!', 'DON', 'BagelMAN'];
 // second expierment
-names = ['SmartBoy90', 'CookingJudy', 'Computebot', 'VardyParty', 'NoBoJo', '21Calculate', 'Maree_GEE', 'BroBeans98', 'PrediX', 'Bristol_Pete', 'Princess SARA', 'NiceFaiz', 'DX2000', 'StorngWoman111', 'Rhondaz', 'LXT2k', 'Little Lisa', 'MaxPower50', 'LordAsh', 'MiniMeghan', 'NetCal', 'Smooth89', 'Demi11', 'FinniGUN', '21Calculate', 'Maree_GEE', 'BroBeans98', 'PrediX', 'Bristol_Pete', 'Princess SARA', 'NiceFaiz', 'CalSURE', 'PA_4000', 'Stacey39', 'DeluxeMAN99', 'Watson400', 'SimonCow', 'HamMan44'];  
+names = ['CompNet', 'AlexD77', 'SmartBoy90', 'CookingJudy', 'Computebot', 'VardyParty', 'NoBoJo', '21Calculate', 'Maree_GEE', 'BroBeans98', 'PrediX', 'Bristol_Pete', 'Princess SARA', 'NiceFaiz', 'DX2000', 'StorngWoman111', 'Rhondaz', 'LXT2k', 'Little Lisa', 'MaxPower50', 'LordAsh', 'MiniMeghan', 'NetCal', 'Smooth89', 'Demi11', 'FinniGUN', '21Calculate', 'Maree_GEE', 'BroBeans98', 'PrediX', 'Bristol_Pete', 'Princess SARA', 'NiceFaiz', 'CalSURE', 'PA_4000', 'Stacey39', 'DeluxeMAN99', 'Watson400', 'SimonCow', 'HamMan44'];  
   
-let names_joined = ['CompNet', 'AlexD77']; //names of people that have joined
+let names_joined = []; //names of people that have joined
 let name_recentjoin;
 let name_left;
 let force_join = 2; //after users joins chat, 2 people will join and no one leaves
